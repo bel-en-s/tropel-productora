@@ -9,56 +9,55 @@ const Footer = () => {
       <div className="footer-row">
         <div className="footer-contact">
           <h3>
-            Let’s Collaborate <br />
+            Trabajemos Juntxs <br />
             film<span>@</span>tropel.com
           </h3>
 
           <p className="secondary">
-            From short films to full productions — I’m always open to creative
-            collaborations. Feel free to reach out anytime.
+            TROPEL es una productora y colectivo audiovisual. Formados en el
+            lenguaje del video musical, desarrollamos una identidad basada en
+            la narración visual y la construcción de atmósferas.
           </p>
 
           <Link to="/contact" className="btn">
-            Get in Touch
+            Escribinos
           </Link>
         </div>
 
         <div className="footer-nav">
           <Link to="/" className="footer-nav-item">
-            <span>Home</span>
+            <span>Inicio</span>
             <span>&#8594;</span>
           </Link>
 
           <Link to="/work" className="footer-nav-item">
-            <span>Work</span>
+            <span>Trabajo</span>
             <span>&#8594;</span>
           </Link>
 
           <Link to="/about" className="footer-nav-item">
-            <span>About</span>
+            <span>Sobre</span>
             <span>&#8594;</span>
           </Link>
 
           <Link to="/contact" className="footer-nav-item">
-            <span>Contact</span>
+            <span>Contacto</span>
             <span>&#8594;</span>
           </Link>
 
           <Link to="/faq" className="footer-nav-item">
-            <span>FAQ</span>
+            <span>Preguntas</span>
             <span>&#8594;</span>
           </Link>
         </div>
       </div>
       <div className="footer-row">
-        <div className="footer-header">
-          <h1>TROPEL</h1>
-        </div>
+       
 
         <div className="footer-copyright-line">
-          <p className="primary sm">&copy; TROPEL 2025</p>
+          <p className="primary sm">&copy; TROPEL 2026</p>
           <div className="website-by">
-            <p className="primary sm">Website by</p>
+            <p className="primary sm">Diseño y desarrollo por</p>
             <img src="/logo-dd.png" alt="divino divino" />
           </div>
         </div>
