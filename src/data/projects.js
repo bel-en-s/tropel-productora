@@ -1,9 +1,9 @@
 const projects = [
   {
     id: 1,
-    title: "Fragments of Light",
-    description: "Short film on self-discovery",
-    image: "/work/work-1.jpg",
+    title: "Como Luces",
+    description: "Lichi y El Principe Idiota — 2026",
+    image: "/work/work-1.png",
   },
   {
     id: 2,

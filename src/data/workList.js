@@ -1,9 +1,12 @@
 const workList = [
   {
     id: 1,
-    title: "Fragments of Light",
-    category: "Short Film",
-    image: "/work/work-1.jpg",
+    title: "Como Luces",
+    category: "Lichi y El Principe Idiota — 2026",
+    image: "/work/work-1.png",
+    images: [
+      "/work/work-1.png",
+    ],
   },
   {
     id: 2,
