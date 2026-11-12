@@ -1,17 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Menu.css";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
+
+import { scrollToSection } from "../../utils/scrollToSection";
 
 const Menu = () => {
   const menuLinks = [
-    { path: "/", label: "Inicio" },
-    { path: "/work", label: "Trabajo" },
-    { path: "/about", label: "Sobre" },
-    { path: "/contact", label: "Contacto" },
-    { path: "/faq", label: "Preguntas" },
+    { id: "inicio", label: "Inicio", scroll: true },
+    { id: "trabajo", label: "Trabajo", scroll: true },
+    { id: "sobre", label: "Sobre", scroll: true },
+    { id: "contacto", label: "Contacto", scroll: true },
   ];
+
+  const navigate = useNavigate();
 
   const location = useLocation();
   const menuContainer = useRef();
@@ -20,7 +23,6 @@ const Menu = () => {
   const menuLinksAnimation = useRef();
   const menuBarAnimation = useRef();
 
-  const lastScrollY = useRef(0);
   const menuBarRef = useRef();
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -62,6 +64,16 @@ const Menu = () => {
   const handleLinkClick = (path) => {
     if (path !== location.pathname) {
       setShouldDelayClose(true);
+    }
+  };
+
+  const handleScrollLinkClick = (link) => {
+    closeMenu();
+
+    if (location.pathname === "/") {
+      setTimeout(() => scrollToSection(link.id), 300);
+    } else {
+      navigate("/", { state: { scrollTo: link.id } });
     }
   };
 
@@ -142,36 +154,6 @@ const Menu = () => {
   }, [isMenuOpen]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (isMenuOpen) return;
-
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY.current) {
-        gsap.to(".menu-bar", {
-          y: -200,
-          duration: 1,
-          ease: "power2.out",
-        });
-      } else {
-        gsap.to(".menu-bar", {
-          y: 0,
-          duration: 1,
-          ease: "power2.out",
-        });
-      }
-
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isMenuOpen]);
-
-  useEffect(() => {
     return () => {
       if (document.body.style.position === "fixed") {
         toggleBodyScroll(false);
@@ -202,13 +184,26 @@ const Menu = () => {
               {menuLinks.map((link, index) => (
                 <div key={index} className="menu-link-item">
                   <div className="menu-link-item-holder">
-                    <Link
-                      className="menu-link"
-                      to={link.path}
-                      onClick={() => handleLinkClick(link.path)}
-                    >
-                      {link.label}
-                    </Link>
+                    {link.scroll ? (
+                      <a
+                        className="menu-link"
+                        href={`#${link.id}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleScrollLinkClick(link);
+                        }}
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        className="menu-link"
+                        to={link.path}
+                        onClick={() => handleLinkClick(link.path)}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </div>
                 </div>
               ))}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./About.css";
 
 import AnimatedCopy from "../../components/AnimatedCopy/AnimatedCopy";
@@ -9,22 +9,38 @@ import ReactLenis from "lenis/react";
 
 import Transition from "../../components/Transition/Transition";
 
+const servicesBannerImages = [
+  "/about/services-banner-1.png",
+  "/about/services-banner-2.png",
+  "/about/services-banner-3.png",
+];
+
 const About = () => {
+  const [bannerIndex, setBannerIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBannerIndex((prev) => (prev + 1) % servicesBannerImages.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <ReactLenis root>
       <div className="page about">
-        <section className="about-header">
+        {/* <section className="about-header">
           <h1>Est</h1>
           <h1>1997</h1>
-        </section>
+        </section> */}
 
-        <section className="about-hero">
+        {/* <section className="about-hero">
           <div className="about-hero-img">
             <img src="/about/about-hero.jpg" alt="" />
           </div>
-        </section>
+        </section> */}
 
-        <section className="about-me-copy">
+        {/* <section className="about-me-copy">
           <div className="about-me-copy-wrapper">
             <AnimatedCopy animateOnScroll={true} tag="h3">
               I'm TROPEL — a filmmaker drawn to human stories, quiet
@@ -44,62 +60,58 @@ const About = () => {
               for a second — it's done its job.
             </AnimatedCopy>
           </div>
-        </section>
+        </section> */}
 
         <section className="services">
           <div className="services-col">
             <div className="services-banner">
-              <img src="/about/services-banner.jpg" alt="" />
+              {servicesBannerImages.map((src, index) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt=""
+                  className={index === bannerIndex ? "active" : ""}
+                />
+              ))}
             </div>
-            <p className="primary">Crafted with Intention</p>
           </div>
           <div className="services-col">
+           
             <h4>
-              Every project is a chance to explore new visual language, push
-              creative boundaries, and tell stories that feel real. I approach
-              each film with care, precision, and purpose.
+              Tropel nace del encuentro entre Melo Piccolomini y Tiki Palomeque,
+              artistas multidisciplinares. Desde el año 2022, realizamos videos
+              musicales, sesiones en vivo, visuales para shows y coberturas.
+            </h4>
+             <h4>
+              Nuestras producciones invitan a repensar el ritmo de vida acelerado, uso 
+              y abuso de la tecnología y adormecimiento del pensamiento crítico.
+               Con una puesta en escena que privilegia la atmósfera por sobre la explicación,
+                buscamos evidenciar el desgaste emocional y la desconexión social que percibimos en la experiencia urbana contemporánea. 
+
             </h4>
 
             <div className="services-list">
               <div className="service-list-row">
                 <div className="service-list-col">
-                  <h5>Filmmaking</h5>
-                </div>
-                <div className="service-list-col">
-                  <p>
-                    From short films to personal narratives, my work is driven
-                    by emotion and atmosphere. I handle direction,
-                    cinematography, and editing — crafting each piece with a
-                    filmmaker’s eye for mood, movement, and meaning.
-                  </p>
+                  <h5>VIDEOCLIPS</h5>
                 </div>
               </div>
 
               <div className="service-list-row">
                 <div className="service-list-col">
-                  <h5>Visual Storytelling</h5>
-                </div>
-                <div className="service-list-col">
-                  <p>
-                    I create visuals that speak — whether it’s a quiet moment or
-                    a bold idea. My work blends aesthetic choices with story
-                    clarity, making sure the emotional core always comes
-                    through.
-                  </p>
+                  <h5>ARTES DE TAPA</h5>
                 </div>
               </div>
 
               <div className="service-list-row">
                 <div className="service-list-col">
-                  <h5>Creative Direction</h5>
+                  <h5>VISUALES EN VIVO</h5>
                 </div>
+              </div>
+
+              <div className="service-list-row">
                 <div className="service-list-col">
-                  <p>
-                    From ideation to final cut, I guide the visual and narrative
-                    tone of every project. I bring a cohesive, cinematic vision
-                    that aligns story, style, and intention — grounded in
-                    authenticity.
-                  </p>
+                  <h5>SESIONES</h5>
                 </div>
               </div>
             </div>

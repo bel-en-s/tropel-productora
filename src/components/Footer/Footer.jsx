@@ -1,9 +1,24 @@
 import React from "react";
 import "./Footer.css";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import { scrollToSection } from "../../utils/scrollToSection";
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleSectionClick = (e, id) => {
+    e.preventDefault();
+
+    if (location.pathname === "/") {
+      scrollToSection(id);
+    } else {
+      navigate("/", { state: { scrollTo: id } });
+    }
+  };
+
   return (
     <div className="footer">
       <div className="footer-row">
@@ -19,9 +34,9 @@ const Footer = () => {
             la narración visual y la construcción de atmósferas.
           </p>
 
-          <Link to="/contact" className="btn">
+          <a href="mailto:tropelfilms@gmail.com" className="btn">
             Escribinos
-          </Link>
+          </a>
         </div>
 
         <div className="footer-nav">
@@ -30,38 +45,56 @@ const Footer = () => {
             <span>&#8594;</span>
           </Link>
 
-          <Link to="/work" className="footer-nav-item">
+          <a
+            href="#trabajo"
+            className="footer-nav-item"
+            onClick={(e) => handleSectionClick(e, "trabajo")}
+          >
             <span>Trabajo</span>
             <span>&#8594;</span>
-          </Link>
+          </a>
 
-          <Link to="/about" className="footer-nav-item">
+          <a
+            href="#sobre"
+            className="footer-nav-item"
+            onClick={(e) => handleSectionClick(e, "sobre")}
+          >
             <span>Sobre</span>
             <span>&#8594;</span>
-          </Link>
+          </a>
 
-          <Link to="/contact" className="footer-nav-item">
+          <a
+            href="#contacto"
+            className="footer-nav-item"
+            onClick={(e) => handleSectionClick(e, "contacto")}
+          >
             <span>Contacto</span>
             <span>&#8594;</span>
-          </Link>
-
-          <Link to="/faq" className="footer-nav-item">
-            <span>Preguntas</span>
-            <span>&#8594;</span>
-          </Link>
+          </a>
         </div>
       </div>
+      
       <div className="footer-row">
-       
+       <h3>
+            Buenos Aires, Argentina
+          </h3>
 
         <div className="footer-copyright-line">
+          
           <p className="primary sm">&copy; TROPEL 2026</p>
           <div className="website-by">
-            <p className="primary sm">Diseño y desarrollo por</p>
-            <img src="/logo-dd.png" alt="divino divino" />
+            <p className="primary sm">crafted by</p>
+            <a
+              href="https://www.divinodivino.com.ar/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src="/logo-dd.png" alt="divino divino" />
+            </a>
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

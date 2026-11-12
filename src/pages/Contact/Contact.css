@@ -1,3 +1,24 @@
 .page.contact {
   padding-top: 8em;
 }
+
+.contact-hero {
+  padding: 4em 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.contact-hero p {
+  width: 60%;
+}
+
+@media (max-width: 1000px) {
+  .contact-hero {
+    padding: 4em 1.25em;
+  }
+
+  .contact-hero p {
+    width: 100%;
+  }
+}

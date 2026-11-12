@@ -145,8 +145,7 @@
   position: relative;
   color: var(--bg);
   font-family: "Montserrat", sans-serif;
-  font-size: 7vw;
-  text-transform: uppercase;
+  font-size: 4vw;
   letter-spacing: -0.01em;
   line-height: 80%;
   transition: color 0.3s;
@@ -178,6 +177,6 @@
   }
 
   .menu-link-item .menu-link-item-holder a {
-    font-size: 16vw;
+    font-size: 10vw;
   }
 }
