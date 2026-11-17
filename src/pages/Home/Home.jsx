@@ -48,10 +48,10 @@ const scatterPositions = [
 ];
 
 const mobileScatterPositions = [
-  { top: "3%", left: "14%" },
-  { top: "27%", left: "14%" },
-  { top: "51%", left: "14%" },
-  { top: "75%", left: "14%" },
+  { top: "2%", left: "20%" },
+  { top: "22%", left: "20%" },
+  { top: "60%", left: "20%" },
+  { top: "80%", left: "20%" },
 ];
 
 const rotations = [-7, 5, -4, 6];
@@ -102,7 +102,7 @@ const ServiceChip = ({ servicio, position, rotation, offset, dragConstraints, on
           </AnimatePresence>
         </div>
       ) : (
-        <img src={servicio.image} alt={servicio.name} draggable={false} />
+        <img src={images[0]} alt={servicio.name} draggable={false} />
       )}
       <span>{servicio.name}</span>
     </motion.div>

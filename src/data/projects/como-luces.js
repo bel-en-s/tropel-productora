@@ -7,6 +7,8 @@ const project = {
   image: "/work/como-luces/cover.png",
   video: "/work/como-luces/video.mp4",
   videoUrl: "https://youtu.be/3LIbUkSGc_M",
+  photosUrl:
+    "https://drive.google.com/drive/folders/1sQL1gPs61hYHZR-BwWfzqsRQ8AQ-4xu4?usp=drive_link",
   images: [
     "/work/como-luces/still-1.png",
     "/work/como-luces/still-2.png",

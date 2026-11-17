@@ -207,15 +207,15 @@
   }
 
   .services-scatter {
-    height: 160vh;
+    height: 190vh;
   }
 
   .service-chip > img {
-    width: 72vw;
+    width: 60vw;
   }
 
   .service-chip-img {
-    width: 72vw;
+    width: 60vw;
   }
 
   .service-chip span {

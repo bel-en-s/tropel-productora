@@ -18,7 +18,7 @@ const Work = () => {
     <div className="work-carousel">
       <AnimatePresence mode="wait">
         <motion.div
-          key={activeProject.id}
+          key={activeProject.slug}
           className="work-slider-img"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -32,7 +32,7 @@ const Work = () => {
       <div className="work-items-preview-container">
         {projects.map((project, index) => (
           <div
-            key={project.id}
+            key={project.slug}
             className={`work-item ${activeIndex === index ? "active" : ""}`}
             onClick={() => goTo(index)}
           >
@@ -42,34 +42,18 @@ const Work = () => {
       </div>
 
       <div className={`carousel-info ${activeProject.darkText ? "dark-text" : ""}`}>
-        <div className="carousel-year">
-          <AnimatePresence mode="wait">
-            {activeProject.year && (
-              <motion.p
-                key={activeProject.id}
-                className="primary sm"
-                initial={{ yPercent: 100 }}
-                animate={{ yPercent: 0 }}
-                exit={{ yPercent: -100 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-              >
-                {activeProject.year}
-              </motion.p>
-            )}
-          </AnimatePresence>
-        </div>
-
-        <div className="carousel-description">
+        <div className="carousel-meta">
           <AnimatePresence mode="wait">
             <motion.p
-              key={activeProject.id}
-              className="primary sm"
+              key={activeProject.slug}
               initial={{ yPercent: 100 }}
               animate={{ yPercent: 0 }}
               exit={{ yPercent: -100 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              {activeProject.description}
+              {[activeProject.description, activeProject.year]
+                .filter(Boolean)
+                .join(" — ")}
             </motion.p>
           </AnimatePresence>
         </div>
@@ -77,7 +61,7 @@ const Work = () => {
         <div className="carousel-title">
           <AnimatePresence mode="wait">
             <motion.h1
-              key={activeProject.id}
+              key={activeProject.slug}
               style={{ cursor: "pointer" }}
               onClick={() =>
                 activeProject.videoUrl
@@ -98,7 +82,7 @@ const Work = () => {
           <AnimatePresence mode="wait">
             {activeProject.subtitle && (
               <motion.p
-                key={activeProject.id}
+                key={activeProject.slug}
                 className="secondary"
                 initial={{ yPercent: 100 }}
                 animate={{ yPercent: 0 }}

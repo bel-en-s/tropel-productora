@@ -13,6 +13,10 @@
   width: 60%;
 }
 
+.contact-hero .secondary {
+  font-family: "Helvetica", Arial, sans-serif;
+}
+
 @media (max-width: 1000px) {
   .contact-hero {
     padding: 4em 1.25em;

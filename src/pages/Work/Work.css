@@ -26,11 +26,21 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 2em;
-  width: 75%;
+  width: 90%;
+  max-width: 100%;
   height: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1em;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.work-items-preview-container::-webkit-scrollbar {
+  display: none;
 }
 
 .work-item {
@@ -56,14 +66,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
+  gap: 1.25em;
   width: 100%;
   padding: 1.25em;
 }
 
-.carousel-description,
+.carousel-meta,
 .carousel-title,
-.carousel-year,
 .carousel-subtitle {
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -72,22 +81,34 @@
 
 .carousel-title h1 {
   line-height: 1;
-  font-size: 3vw;
+  font-size: 5vw;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .carousel-title h1,
-.carousel-description p,
-.carousel-year p,
+.carousel-meta p,
 .carousel-subtitle p {
   position: relative;
   display: block;
   will-change: transform;
   color: var(--bg);
   text-align: center;
+  font-family: "Helvetica", Arial, sans-serif;
+}
+
+.carousel-meta p {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.7;
 }
 
 .carousel-subtitle p {
   line-height: 1.4;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .carousel-links {
@@ -95,32 +116,28 @@
   gap: 0.75em;
   align-items: center;
   justify-content: center;
-  margin-top: 0.25em;
+  margin-top: 0.5em;
 }
 
 .carousel-video-link {
   display: inline-block;
-  padding: 0.6em 1.75em;
-  border: 1px solid var(--bg);
+  padding: 0.7em 2em;
+  background: var(--bg);
+  color: var(--fg);
   border-radius: 2em;
-  color: var(--bg);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: "Helvetica", Arial, sans-serif;
   text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .carousel-video-link:hover {
-  background: var(--bg);
-  color: var(--fg);
+  opacity: 0.85;
+  transform: translateY(-1px);
 }
 
 .carousel-info.dark-text .carousel-video-link {
-  border-color: #000000;
-  color: #000000;
-}
-
-.carousel-info.dark-text .carousel-video-link:hover {
   background: #000000;
   color: #ffffff;
 }
@@ -134,5 +151,17 @@
   .work-items-preview-container {
     width: 100%;
     padding: 0 1.25em;
+  }
+
+  .carousel-title h1 {
+    font-size: 11vw;
+  }
+
+  .carousel-subtitle p {
+    font-size: 1.15rem;
+  }
+
+  .carousel-links {
+    flex-wrap: wrap;
   }
 }

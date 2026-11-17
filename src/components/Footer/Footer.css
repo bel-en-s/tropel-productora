@@ -48,6 +48,10 @@
   margin-bottom: 0.5em;
 }
 
+.footer-contact .secondary {
+  font-family: "Helvetica", Arial, sans-serif;
+}
+
 .footer-header {
   width: 100%;
   padding: 4em 0;
