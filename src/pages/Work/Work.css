@@ -12,7 +12,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
+}
+
+.work-slider-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .work-items-preview-container {
@@ -31,7 +37,7 @@
   width: 80px;
   height: 100%;
   flex-shrink: 0;
-  border: 1px dashed var(--bg200);
+  border: 1px solid var(--bg200);
   border-radius: 0.5em;
   overflow: hidden;
   cursor: pointer;
@@ -39,7 +45,7 @@
 }
 
 .work-item.active {
-  border: 1px dashed var(--bg);
+  border: 1px solid var(--bg);
 }
 
 .carousel-info {
@@ -56,7 +62,9 @@
 }
 
 .carousel-description,
-.carousel-title {
+.carousel-title,
+.carousel-year,
+.carousel-subtitle {
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   width: 100%;
@@ -64,15 +72,62 @@
 
 .carousel-title h1 {
   line-height: 1;
+  font-size: 3vw;
 }
 
 .carousel-title h1,
-.carousel-description p {
+.carousel-description p,
+.carousel-year p,
+.carousel-subtitle p {
   position: relative;
   display: block;
   will-change: transform;
   color: var(--bg);
   text-align: center;
+}
+
+.carousel-subtitle p {
+  line-height: 1.4;
+}
+
+.carousel-links {
+  display: flex;
+  gap: 0.75em;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25em;
+}
+
+.carousel-video-link {
+  display: inline-block;
+  padding: 0.6em 1.75em;
+  border: 1px solid var(--bg);
+  border-radius: 2em;
+  color: var(--bg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.carousel-video-link:hover {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.carousel-info.dark-text .carousel-video-link {
+  border-color: #000000;
+  color: #000000;
+}
+
+.carousel-info.dark-text .carousel-video-link:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.carousel-info.dark-text h1,
+.carousel-info.dark-text p {
+  color: #000000;
 }
 
 @media (max-width: 1000px) {

@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Plantagenet Cherokee";
+  src: url("/fonts/plantagenet-cherokee/PlantagenetCherokee.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: local("Helvetica Bold"), local("Helvetica-Bold"),
+    local("Helvetica Neue Bold"), local("HelveticaNeue-Bold");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #e3e3db;
   --bg200: rgba(227, 227, 219, 0.25);
@@ -12,7 +30,7 @@
 }
 
 body {
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plantagenet Cherokee", "Helvetica", Arial, sans-serif;
   background-color: var(--bg);
   color: var(--fg);
 }
@@ -31,7 +49,7 @@ h3,
 h4,
 h5 {
   /* text-transform: uppercase; */
-  font-family: "Montserrat", sans-serif;
+  font-family: "Helvetica", Arial, sans-serif;
 }
 
 h1 {
@@ -67,7 +85,7 @@ h5 {
 }
 
 p {
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plantagenet Cherokee", "Helvetica", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -75,7 +93,7 @@ p {
 
 p.primary {
   /* text-transform: uppercase; */
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plantagenet Cherokee", "Helvetica", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -83,7 +101,7 @@ p.primary {
 }
 
 p.secondary {
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plantagenet Cherokee", "Helvetica", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -91,7 +109,7 @@ p.secondary {
 
 p.primary.sm {
   /* text-transform: uppercase; */
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plantagenet Cherokee", "Helvetica", Arial, sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -99,7 +117,7 @@ p.primary.sm {
 }
 
 p.secondary.sm {
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plantagenet Cherokee", "Helvetica", Arial, sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -108,9 +126,9 @@ p.secondary.sm {
 a {
   display: block;
   text-decoration: none;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: var(--fg);
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plantagenet Cherokee", "Helvetica", Arial, sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -131,7 +149,7 @@ textarea:focus {
   outline: none;
   width: 100%;
   padding: 1em;
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plantagenet Cherokee", "Helvetica", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -140,7 +158,7 @@ textarea:focus {
 
 input::placeholder,
 textarea::placeholder {
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plantagenet Cherokee", "Helvetica", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -152,7 +170,7 @@ textarea::placeholder {
   display: block;
   width: max-content;
   padding: 1em 2em;
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plantagenet Cherokee", "Helvetica", Arial, sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;

@@ -77,54 +77,55 @@ const About = () => {
           </div>
           <div className="services-col">
            
-            <h4>
+            <p className="about-copy">
               Tropel nace del encuentro entre Melo Piccolomini y Tiki Palomeque,
               artistas multidisciplinares. Desde el año 2022, realizamos videos
               musicales, sesiones en vivo, visuales para shows y coberturas.
-            </h4>
-             <h4>
-              Nuestras producciones invitan a repensar el ritmo de vida acelerado, uso 
-              y abuso de la tecnología y adormecimiento del pensamiento crítico.
-               Con una puesta en escena que privilegia la atmósfera por sobre la explicación,
-                buscamos evidenciar el desgaste emocional y la desconexión social que percibimos en la experiencia urbana contemporánea. 
+            </p>
+            <p className="about-copy">
+              Nuestras producciones invitan a repensar el ritmo de vida acelerado,
+              uso y abuso de la tecnología y adormecimiento del pensamiento
+              crítico. Con una puesta en escena que privilegia la atmósfera por
+              sobre la explicación, buscamos evidenciar el desgaste emocional y la
+              desconexión social que percibimos en la experiencia urbana
+              contemporánea.
+            </p>
 
-            </h4>
-
-            <div className="services-list">
+            {/* <div className="services-list">
               <div className="service-list-row">
                 <div className="service-list-col">
-                  <h5>VIDEOCLIPS</h5>
+                  <h5>Arte de tapa</h5>
                 </div>
               </div>
 
               <div className="service-list-row">
                 <div className="service-list-col">
-                  <h5>ARTES DE TAPA</h5>
+                  <h5>Visuales en vivo</h5>
                 </div>
               </div>
 
               <div className="service-list-row">
                 <div className="service-list-col">
-                  <h5>VISUALES EN VIVO</h5>
+                  <h5>Videoclips</h5>
                 </div>
               </div>
 
               <div className="service-list-row">
                 <div className="service-list-col">
-                  <h5>SESIONES</h5>
+                  <h5>Fotografía</h5>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
 
-        <section className="about-banner-img">
+        {/* <section className="about-banner-img">
           <div className="about-banner-img-wrapper">
             <img src="/about/about-banner.jpg" alt="" />
           </div>
-        </section>
+        </section> */}
 
-        <section className="fav-tools">
+        {/* <section className="fav-tools">
           <div className="fav-tools-header">
             <AnimatedCopy tag="p" animateOnScroll={true} className="primary sm">
               Daily Stack
@@ -167,7 +168,7 @@ const About = () => {
                 <p className="primary sm">Cinematic Shooting</p>
               </div>
             </div>
-            <div className="fav-tools-list-row">
+            {/* <div className="fav-tools-list-row">
               <div className="fav-tool">
                 <div className="fav-tool-img">
                   <img src="/about/tool-4.jpg" alt="" />
@@ -189,9 +190,9 @@ const About = () => {
                 <h4>Celtx</h4>
                 <p className="primary sm">Scriptwriting Tool</p>
               </div>
-            </div>
+            </div> 
           </div>
-        </section>
+        </section> */}
 
         <ContactForm />
 

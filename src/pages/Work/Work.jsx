@@ -41,7 +41,24 @@ const Work = () => {
         ))}
       </div>
 
-      <div className="carousel-info">
+      <div className={`carousel-info ${activeProject.darkText ? "dark-text" : ""}`}>
+        <div className="carousel-year">
+          <AnimatePresence mode="wait">
+            {activeProject.year && (
+              <motion.p
+                key={activeProject.id}
+                className="primary sm"
+                initial={{ yPercent: 100 }}
+                animate={{ yPercent: 0 }}
+                exit={{ yPercent: -100 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                {activeProject.year}
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </div>
+
         <div className="carousel-description">
           <AnimatePresence mode="wait">
             <motion.p
@@ -62,7 +79,11 @@ const Work = () => {
             <motion.h1
               key={activeProject.id}
               style={{ cursor: "pointer" }}
-              onClick={() => navigate(`/project/${activeProject.slug}`)}
+              onClick={() =>
+                activeProject.videoUrl
+                  ? window.open(activeProject.videoUrl, "_blank", "noopener,noreferrer")
+                  : navigate(`/project/${activeProject.slug}`)
+              }
               initial={{ yPercent: 100 }}
               animate={{ yPercent: 0 }}
               exit={{ yPercent: -100 }}
@@ -72,6 +93,48 @@ const Work = () => {
             </motion.h1>
           </AnimatePresence>
         </div>
+
+        <div className="carousel-subtitle">
+          <AnimatePresence mode="wait">
+            {activeProject.subtitle && (
+              <motion.p
+                key={activeProject.id}
+                className="secondary"
+                initial={{ yPercent: 100 }}
+                animate={{ yPercent: 0 }}
+                exit={{ yPercent: -100 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                {activeProject.subtitle}
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {(activeProject.videoUrl || activeProject.photosUrl) && (
+          <div className="carousel-links">
+            {activeProject.videoUrl && (
+              <a
+                className="carousel-video-link"
+                href={activeProject.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver video
+              </a>
+            )}
+            {activeProject.photosUrl && (
+              <a
+                className="carousel-video-link"
+                href={activeProject.photosUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fotos
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

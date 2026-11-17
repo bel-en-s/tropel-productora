@@ -63,9 +63,8 @@ const ContactForm = () => {
             <h3>Tenés un proyecto en mente?</h3>
 
             <p>
-              Démosle vida. Contactanos y hablemos de tu proyecto. Estamos
-              disponibles para freelance y clientes en todo el mundo. Nos encanta
-              colaborar con artistas, marcas y creativos de todas partes.
+              Démosle vida. Nos encanta
+              colaborar con artistas, marcas y creativos de todas partes del mundo.
             </p>
           </div>
         </div>

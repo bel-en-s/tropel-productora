@@ -1,9 +1,12 @@
 const project = {
   slug: "como-luces",
   title: "Como Luces",
+  subtitle: "Lichi y El Principe Idiota",
+  year: "2026",
   description: "Videoclip",
-  image: "/work/como-luces/still-1.png",
+  image: "/work/como-luces/cover.png",
   video: "/work/como-luces/video.mp4",
+  videoUrl: "https://youtu.be/3LIbUkSGc_M",
   images: [
     "/work/como-luces/still-1.png",
     "/work/como-luces/still-2.png",

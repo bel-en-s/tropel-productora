@@ -66,9 +66,14 @@
   align-items: center;
   text-align: center;
   padding: 1.5em;
-  border: 1px dashed var(--fg);
+  border: 1px solid var(--fg);
   border-radius: 1em;
   overflow: hidden;
+}
+.statement-text {
+  width: 100%;
+  color:black;
+  font-family: "Helvetica", sans-serif;
 }
 
 .hobby-video {
@@ -104,13 +109,137 @@
   color: var(--bg);
 }
 
+.hero-statement {
+  padding: 6em 2em 4em;
+  background-color: rgb(254, 254, 254);
+}
+
+
+.horse-animation {
+  width: 100%;
+  min-height: 100vh;
+  padding: 4em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.what-we-do-title {
+  font-family: "Helvetica", sans-serif;
+  font-size: 3vw;
+  color: var(--fg);
+  text-align: right;
+  margin-bottom: 2em;
+}
+
+.services-scatter {
+  position: relative;
+  width: 100%;
+  height: 160vh;
+}
+
+.horse-animation-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) invert(1);
+}
+
+.service-chip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  z-index: 2;
+}
+
+.service-chip:active {
+  cursor: grabbing;
+}
+
+.service-chip-img {
+  position: relative;
+  width: 50vw;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.service-chip-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-chip > img {
+  width: 50vw;
+  max-width: 320px;
+}
+
+.service-chip span {
+  font-family: "Helvetica", sans-serif;
+  color: var(--fg);
+  font-size: 1vw;
+  white-space: nowrap;
+  padding: 0.4em 0.9em;
+  border-radius: 2em;
+  border: 1px solid var(--fg);
+  background: rgba(255, 255, 255, 0.8);
+}
+
 @media (max-width: 1000px) {
   .home-hero {
     padding: 8em 1.25em 3em;
   }
 
+  .services-scatter {
+    height: 160vh;
+  }
+
+  .service-chip > img {
+    width: 72vw;
+  }
+
+  .service-chip-img {
+    width: 72vw;
+  }
+
+  .service-chip span {
+    font-size: 0.85rem;
+  }
+
+  .horse-animation-video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) invert(1);
+}
+
   .home-hero p {
     width: 100%;
+  }
+
+  .hero-statement {
+    padding: 4em 1.25em;
+  }
+
+  .hero-statement .footer-contact h3 {
+    width: 100%;
+    font-size: 1.25rem;
   }
 
   .hero {
