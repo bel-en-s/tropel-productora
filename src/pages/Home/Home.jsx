@@ -2,7 +2,7 @@ import "./Home.css";
 import "../../components/Footer/Footer.css";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import Work from "../Work/Work";
 import About from "../About/About";
@@ -56,25 +56,7 @@ const mobileScatterPositions = [
 
 const rotations = [-7, 5, -4, 6];
 
-const ServiceChip = ({ servicio, position, rotation, offset, dragConstraints, onDragEnd, index }) => {
-  const images = servicio.images || [servicio.image];
-  const [activeImage, setActiveImage] = useState(0);
-
-  useEffect(() => {
-    if (images.length <= 1) return;
-    let interval;
-    const timeout = setTimeout(() => {
-      interval = setInterval(
-        () => setActiveImage((i) => (i + 1) % images.length),
-        2200
-      );
-    }, index * 1100);
-    return () => {
-      clearTimeout(timeout);
-      if (interval) clearInterval(interval);
-    };
-  }, [images.length, index]);
-
+const ServiceChip = ({ servicio, position, rotation, offset, dragConstraints, onDragEnd }) => {
   return (
     <motion.div
       className="service-chip"
@@ -86,24 +68,6 @@ const ServiceChip = ({ servicio, position, rotation, offset, dragConstraints, on
       onDragEnd={onDragEnd}
       style={{ ...position, x: offset.x, y: offset.y, rotate: rotation }}
     >
-      {images.length > 1 ? (
-        <div className="service-chip-img">
-          <AnimatePresence initial={false}>
-            <motion.img
-              key={activeImage}
-              src={images[activeImage]}
-              alt={servicio.name}
-              draggable={false}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            />
-          </AnimatePresence>
-        </div>
-      ) : (
-        <img src={images[0]} alt={servicio.name} draggable={false} />
-      )}
       <span>{servicio.name}</span>
     </motion.div>
   );
@@ -213,7 +177,6 @@ const Home = () => {
                 offset={offset}
                 dragConstraints={scatterRef}
                 onDragEnd={handleDragEnd(servicio.name)}
-                index={index}
               />
             );
           })}

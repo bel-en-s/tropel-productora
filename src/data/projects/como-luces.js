@@ -4,7 +4,7 @@ const project = {
   subtitle: "Lichi y El Principe Idiota",
   year: "2026",
   description: "Videoclip",
-  image: "/work/como-luces/cover.png",
+  image: "/work/como-luces/cover.jpg",
   video: "/work/como-luces/video.mp4",
   videoUrl: "https://youtu.be/3LIbUkSGc_M",
   photosUrl:

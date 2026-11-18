@@ -12,12 +12,18 @@ import otraVez from "./otra-vez";
 import azucenaSession from "./azucena-session";
 import pjVivoUnla from "./pj-vivo-unla";
 import cancionLichi from "./cancion-lichi";
-import fugaz from "./fugaz";
+import diaDeLaMarmota from "./dia-de-la-marmota";
+import supershow from "./supershow";
+import escuchenLosSonidos from "./escuchen-los-sonidos";
+import lichiVisuales from "./lichi-visuales";
 
 const projects = [
   comoLuces,
+  azucenaSession,
   entreParentesis,
+  pjVivoUnla,
   existeElPocodrilo,
+  cancionLichi,
   trampas,
   cenado,
   leDiscoteque,
@@ -26,10 +32,10 @@ const projects = [
   destruccion,
   horas,
   otraVez,
-  azucenaSession,
-  pjVivoUnla,
-  cancionLichi,
-  fugaz,
+  diaDeLaMarmota,
+  supershow,
+  escuchenLosSonidos,
+  lichiVisuales,
 ];
 
 export default projects;

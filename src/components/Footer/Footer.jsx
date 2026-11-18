@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { scrollToSection } from "../../utils/scrollToSection";
 
@@ -40,10 +40,14 @@ const Footer = () => {
         </div>
 
         <div className="footer-nav">
-          <Link to="/" className="footer-nav-item">
+          <a
+            href="#inicio"
+            className="footer-nav-item"
+            onClick={(e) => handleSectionClick(e, "inicio")}
+          >
             <span>Inicio</span>
             <span>&#8594;</span>
-          </Link>
+          </a>
 
           <a
             href="#trabajo"

@@ -9,7 +9,6 @@ const project = {
   videoUrl: "https://youtu.be/rMMlPXNBpfs",
   photosUrl:
     "https://drive.google.com/drive/folders/1psuNjPDUlLE5rurafZ4RBncaViFQ3gBn?usp=drive_link",
-  darkText: true,
 };
 
 export default project;

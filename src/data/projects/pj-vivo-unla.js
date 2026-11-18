@@ -4,8 +4,8 @@ const project = {
   subtitle: "Proyecto Jacobino",
   year: "2026",
   description: "Sesión en vivo",
-  image: "/work/placeholder.svg",
-  images: ["/work/placeholder.svg"],
+  image: "/work/pj-vivo-unla/cover.png",
+  images: ["/work/pj-vivo-unla/cover.png"],
   videoUrl: "https://youtu.be/YDZD2Ovbhi8",
 };
 

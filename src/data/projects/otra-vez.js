@@ -4,8 +4,8 @@ const project = {
   subtitle: "Sol Melisma feat. An Espil",
   year: "2023",
   description: "Videoclip",
-  image: "/work/placeholder.svg",
-  images: ["/work/placeholder.svg"],
+  image: "/work/otra-vez/cover.png",
+  images: ["/work/otra-vez/cover.png"],
   videoUrl: "https://youtu.be/OYZMXvwgAXY",
 };
 

@@ -4,8 +4,8 @@ const project = {
   subtitle: "Proyecto Jacobino",
   year: "2023",
   description: "Videoclip",
-  image: "/work/placeholder.svg",
-  images: ["/work/placeholder.svg"],
+  image: "/work/anarcotizado/cover.png",
+  images: ["/work/anarcotizado/cover.png"],
   videoUrl: "https://youtu.be/WQKjrRJ-Rtw",
 };
 

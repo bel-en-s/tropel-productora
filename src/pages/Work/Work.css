@@ -16,6 +16,8 @@
 }
 
 .work-slider-img img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -26,17 +28,13 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 2em;
-  width: 90%;
-  max-width: 100%;
-  height: 60px;
+  width: 100%;
+  max-width: 800px;
   display: flex;
-  justify-content: flex-start;
-  gap: 1em;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 0.4em;
 }
 
 .work-items-preview-container::-webkit-scrollbar {
@@ -44,8 +42,9 @@
 }
 
 .work-item {
+  position: relative;
   width: 80px;
-  height: 100%;
+  height: 50px;
   flex-shrink: 0;
   border: 1px solid var(--bg200);
   border-radius: 0.5em;
@@ -54,29 +53,47 @@
   transition: border 0.3s ease-in-out;
 }
 
+.work-item-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.15em 0.3em;
+  background: #000000;
+  color: #ffffff;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-size: 0.5rem;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .work-item.active {
   border: 1px solid var(--bg);
 }
 
 .carousel-info {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 8vh;
+  left: 4vw;
+  transform: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.25em;
-  width: 100%;
-  padding: 1.25em;
+  width: 50%;
+  padding: 0;
 }
 
 .carousel-meta,
 .carousel-title,
 .carousel-subtitle {
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  width: 100%;
+
+  background-color: black;
+  /* mix-blend-mode: difference; */
 }
 
 .carousel-title h1 {
@@ -93,7 +110,7 @@
   display: block;
   will-change: transform;
   color: var(--bg);
-  text-align: center;
+  text-align: left;
   font-family: "Helvetica", Arial, sans-serif;
 }
 
@@ -103,6 +120,10 @@
   font-size: 0.75rem;
   font-weight: 600;
   opacity: 0.7;
+}
+
+.carousel-meta {
+  margin-top: 10em;
 }
 
 .carousel-subtitle p {
@@ -151,10 +172,22 @@
   .work-items-preview-container {
     width: 100%;
     padding: 0 1.25em;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    height: 60px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .carousel-title h1 {
     font-size: 11vw;
+  }
+
+  .carousel-meta {
+    margin-top: 5em;
   }
 
   .carousel-subtitle p {
